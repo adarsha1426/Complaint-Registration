@@ -35,6 +35,7 @@ def signup(request):
         if form.is_valid():
             user=form.save()
             user.username=user.username.lower()
+         
             user.save()
             messages.success(request,'Account created and Logged In successfully.')
             login(request,user)
@@ -59,6 +60,10 @@ def register_complaint(request):
     if request.method == 'POST':
         form = ComplaintForm(request.POST, request.FILES)
         if form.is_valid():
+            complaint = form.save(commit=False)
+            complaint.user=request.user
+            
+            complaint.save()
             form.save()
             messages.success(request, 'Your complaint has been registered successfully.')
             return redirect('view')

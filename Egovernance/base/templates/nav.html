@@ -23,7 +23,7 @@
                 </ul>
             </div>
             {% if user.is_authenticated %}
-          
+
                 <form class="d-flex" role="search" action="{% url 'logout' %}" method="post">
                     {% csrf_token %}
                     <button class="btn btn-outline-success" type="submit" style="text-decoration:none;">Logout</button>
@@ -34,7 +34,9 @@
                     <button class="btn btn-outline-success" type="submit"><a href="{% url 'login' %}" style="text-decoration:none; color:inherit;">Login</a></button>
                 </form>
             {% endif %}
+           
             &nbsp;
+            
             <form class="d-flex" role="search">
                 <button class="btn btn-outline-success" type="submit"><a href="{% url 'register-complaint' %}" style="text-decoration:none; color:inherit;">Register Complaint</a></button>
             </form>

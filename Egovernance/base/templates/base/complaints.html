@@ -13,6 +13,7 @@
                 <th scope="col">Complaint Name</th>
                 <th scope="col">Category</th>
                 <th scope="col">Complaint Description</th>
+                <th scope="col">Address</th>
                 <th scope="col">Complaint Image</th>
                 <th scope="col">Complaint status</th>
             </tr>
@@ -23,6 +24,7 @@
                 <td>{{ item.name }}</td>
                 <td>{{ item.category }}</td>
                 <td>{{ item.description }}</td>
+                <td>{{item.address}}</td>
              
                     <td>
                         {% if item.image %}
